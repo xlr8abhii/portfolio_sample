@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1rem 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00ffff;
+}
+
+.full-height {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    text-align: center;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+h1, h2 {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input, textarea, button {
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #00ffff;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #00cccc;
+}
+
+#home { background-color: #ff6b6b; }
+#about { background-color: #4ecdc4; }
+#projects { background-color: #45b7d1; }
+#contact { background-color: #f7d794; }
+
+section {
+    opacity: 1; /* Start with full opacity */
+    transform: none; /* Reset any transforms */
+}
+
+#home {
+    background: linear-gradient(45deg, #ff8c8c, #60a5ff, hsl(139, 99%, 68%), #ffb922);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: center; /* Center nav items */
+    }
+
+    nav ul li {
+        margin: 0.5rem 0; /* Adjust margin for vertical layout */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Reduce font size for smaller screens */
+    }
+
+    h2 {
+        font-size: 2rem; /* Reduce font size for smaller screens */
+    }
+
+    p {
+        font-size: 1rem; /* Adjust paragraph font size */
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr; /* Stack project cards vertically */
+    }
+
+    form {
+        max-width: 90%; /* Allow form to take more width */
+    }
+
+    input, textarea, button {
+        font-size: 0.9rem; /* Adjust input font size */
+    }
+
+    /* Additional styles for better mobile experience */
+    .content {
+        padding: 1rem; /* Reduce padding for smaller screens */
+    }
+
+    button {
+        padding: 1rem; /* Increase button padding for easier tapping */
+    }
+}
